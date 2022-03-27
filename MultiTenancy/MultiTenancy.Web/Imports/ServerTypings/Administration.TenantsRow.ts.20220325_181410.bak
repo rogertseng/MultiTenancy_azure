@@ -1,0 +1,27 @@
+﻿
+namespace MultiTenancy.Administration {
+    export interface TenantsRow {
+        TenantId?: number;
+        TenantName?: string;
+    }
+
+    export namespace TenantsRow {
+        export const idProperty = 'TenantId';
+        export const nameProperty = 'TenantName';
+        export const localTextPrefix = 'Administration.Tenants';
+        export const deletePermission = 'Administration:General';
+        export const insertPermission = 'Administration:General';
+        export const readPermission = 'Administration:General';
+        export const updatePermission = 'Administration:General';
+
+        export namespace Fields {
+            export declare const TenantId;
+            export declare const TenantName;
+        }
+
+        [
+            'TenantId',
+            'TenantName'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}
